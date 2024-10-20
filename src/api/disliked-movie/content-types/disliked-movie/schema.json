@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disliked_movies",
+  "info": {
+    "singularName": "disliked-movie",
+    "pluralName": "disliked-movies",
+    "displayName": "Disliked Movies",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IMDBId": {
+      "type": "string"
+    },
+    "Genre": {
+      "type": "string"
+    },
+    "Summary": {
+      "type": "text"
+    },
+    "Director": {
+      "type": "string"
+    },
+    "Actors": {
+      "type": "string"
+    },
+    "IMDBRating": {
+      "type": "string"
+    },
+    "RottenTomatoesRating": {
+      "type": "integer"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Poster": {
+      "type": "string"
+    }
+  }
+}
