@@ -1,4 +1,4 @@
-import path from "path";
+/* import path from "path";
 
 export default ({ env }) => {
   const client = env("DATABASE_CLIENT", "postgres");
@@ -75,3 +75,21 @@ export default ({ env }) => {
     },
   };
 };
+ */
+
+export default ({ env }) => ({
+  connection: {
+    client: "postgres",
+    connection: {
+      host: env("DATABASE_HOST", "dpg-csb4dqd6l47c73f7iv20-a"), // Använd korrekt värdnamn
+      port: env.int("DATABASE_PORT", 5432),
+      database: env("DATABASE_NAME", "sceneitdb"), // Använd rätt databasnamn
+      user: env("DATABASE_USERNAME", "sceneitdb_user"), // Använd rätt användarnamn
+      password: env("nKfumJTTWV2FLmschz13fgGaYukU3qzy"), // Se till att lösenordet är korrekt
+      ssl: {
+        rejectUnauthorized: false, // Aktivera SSL om det behövs
+      },
+    },
+    pool: { min: 0, max: 10 },
+  },
+});
