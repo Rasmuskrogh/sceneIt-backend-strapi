@@ -1,4 +1,18 @@
-import path from 'path';
+module.exports = ({ env }) => ({
+  connection: {
+    client: "postgres",
+    connection: {
+      host: env("DATABASE_HOST", "dpg-csb4dqd6l47c73f7iv20-a"),
+      port: env.int("DATABASE_PORT", 5432),
+      database: env("DATABASE_NAME", "sceneitdb"),
+      user: env("DATABASE_USERNAME", "sceneitdb_user"),
+      password: env("DATABASE_PASSWORD", "nKfumJTTWV2FLmschz13fgGaYukU3qzy"),
+      ssl: env.bool("DATABASE_SSL", true), // Om du använder SSL
+    },
+  },
+});
+
+/* import path from 'path';
 
 export default ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
@@ -58,3 +72,4 @@ export default ({ env }) => {
     },
   };
 };
+ */
