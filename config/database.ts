@@ -31,11 +31,11 @@ export default ({ env }) => {
     postgres: {
       connection: {
         connectionString: env("DATABASE_URL"),
-        host: env("DATABASE_HOST", "localhost"),
+        host: env("DATABASE_HOST", "dpg-csb4dqd6l47c73f7iv20-a"),
         port: env.int("DATABASE_PORT", 5432),
-        database: env("DATABASE_NAME", "strapi"),
-        user: env("DATABASE_USERNAME", "strapi"),
-        password: env("DATABASE_PASSWORD", "strapi"),
+        database: env("DATABASE_NAME", "sceneitdb"),
+        user: env("DATABASE_USERNAME", "sceneitdb_user"),
+        password: env("DATABASE_PASSWORD", "nKfumJTTWV2FLmschz13fgGaYukU3qzy"),
         ssl: env.bool("DATABASE_SSL", false) && {
           key: env("DATABASE_SSL_KEY", undefined),
           cert: env("DATABASE_SSL_CERT", undefined),
