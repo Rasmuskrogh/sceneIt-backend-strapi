@@ -85,7 +85,7 @@ export default ({ env }) => ({
       port: env.int("DATABASE_PORT", 5432),
       database: env("DATABASE_NAME", "sceneitdb"), // Använd rätt databasnamn
       user: env("DATABASE_USERNAME", "sceneitdb_user"), // Använd rätt användarnamn
-      password: env("nKfumJTTWV2FLmschz13fgGaYukU3qzy"), // Se till att lösenordet är korrekt
+      password: env("DATABASE_PASSWORD"), // Se till att lösenordet är korrekt
       ssl: {
         rejectUnauthorized: false, // Aktivera SSL om det behövs
       },
