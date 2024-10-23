@@ -1,7 +1,7 @@
-/* import path from "path";
+import path from "path";
 
 export default ({ env }) => {
-  const client = env("DATABASE_CLIENT", "postgres");
+  const client = env("DATABASE_CLIENT", "sqlite");
 
   const connections = {
     mysql: {
@@ -31,11 +31,11 @@ export default ({ env }) => {
     postgres: {
       connection: {
         connectionString: env("DATABASE_URL"),
-        host: env("DATABASE_HOST", "dpg-csb4dqd6l47c73f7iv20-a"),
+        host: env("DATABASE_HOST", "localhost"),
         port: env.int("DATABASE_PORT", 5432),
-        database: env("DATABASE_NAME", "sceneitdb"),
-        user: env("DATABASE_USERNAME", "sceneitdb_user"),
-        password: env("DATABASE_PASSWORD", "nKfumJTTWV2FLmschz13fgGaYukU3qzy"),
+        database: env("DATABASE_NAME", "strapi"),
+        user: env("DATABASE_USERNAME", "strapi"),
+        password: env("DATABASE_PASSWORD", "strapi"),
         ssl: env.bool("DATABASE_SSL", false) && {
           key: env("DATABASE_SSL_KEY", undefined),
           cert: env("DATABASE_SSL_CERT", undefined),
@@ -75,21 +75,3 @@ export default ({ env }) => {
     },
   };
 };
- */
-
-export default ({ env }) => ({
-  connection: {
-    client: "postgres",
-    connection: {
-      host: env("DATABASE_HOST", "dpg-csb4dqd6l47c73f7iv20-a"), // Använd korrekt värdnamn
-      port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME", "sceneitdb"), // Använd rätt databasnamn
-      user: env("DATABASE_USERNAME", "sceneitdb_user"), // Använd rätt användarnamn
-      password: env("DATABASE_PASSWORD"), // Se till att lösenordet är korrekt
-      ssl: {
-        rejectUnauthorized: false, // Aktivera SSL om det behövs
-      },
-    },
-    pool: { min: 0, max: 10 },
-  },
-});
